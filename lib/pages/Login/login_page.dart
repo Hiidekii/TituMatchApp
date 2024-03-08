@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
 
   // sign user in method
   void signUserIn(BuildContext context) {
-    GoRouter.of(context).go('/home');
+    GoRouter.of(context).go('/quiz1');
   }
 
   @override
