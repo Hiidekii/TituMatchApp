@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-Widget ProfilePicture(BuildContext context, String person) {
+Widget profilePictureAs(BuildContext context, String person) {
   return Padding(
     padding: const EdgeInsets.only(right: 10, left: 10),
     child: GestureDetector(

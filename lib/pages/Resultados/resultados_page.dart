@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:titumatch/components/secondaryappbar.dart';
 
 class ResultadosPage extends StatefulWidget {
-  const ResultadosPage({Key? key});
+  const ResultadosPage({super.key});
 
   @override
   State<ResultadosPage> createState() => _ResultadosPageState();

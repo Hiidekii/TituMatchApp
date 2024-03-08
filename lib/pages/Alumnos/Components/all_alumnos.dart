@@ -1,13 +1,13 @@
 import "package:flutter/material.dart";
-import "package:titumatch/pages/Asesores/Components/profilepictureas.dart";
+import "package:titumatch/pages/Alumnos/Components/profilepictureal.dart";
 
-Widget allAsesores(BuildContext context) {
+Widget allAlumnos(BuildContext context) {
   return Column(
     children: [
       Container(
         alignment: Alignment.centerLeft,
         child: const Text(
-          "¡Tus asesores idales!",
+          "¡Tus Compañeros idales!",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -23,10 +23,10 @@ Widget allAsesores(BuildContext context) {
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: <Widget>[
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
           ],
         ),
       ),
@@ -52,10 +52,10 @@ Widget allAsesores(BuildContext context) {
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: <Widget>[
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
-            profilePictureAs(context, 'lib/images/albertomatsu.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
+            profilePictureAl(context, 'lib/images/alumnoplaceholder.jpg'),
           ],
         ),
       ),

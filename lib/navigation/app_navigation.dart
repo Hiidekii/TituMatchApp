@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:titumatch/pages/Alumnos/alumnos_page.dart';
 import 'package:titumatch/pages/Asesores/asesores_page.dart';
 import 'package:titumatch/pages/Eventos/eventos_page.dart';
 import 'package:titumatch/pages/Home/home_page.dart';
@@ -45,7 +46,7 @@ class AppNavigation {
         path: '/resultados',
         name: 'Resultados',
         builder: (context, state) {
-          return ResultadosPage();
+          return const ResultadosPage();
         },
       ),
       //AsesoresPage
@@ -53,7 +54,7 @@ class AppNavigation {
         path: '/asesores',
         name: 'Asesores',
         builder: (context, state) {
-          return AsesoresPage();
+          return const AsesoresPage();
         },
       ),
       //TemasPage
@@ -61,7 +62,7 @@ class AppNavigation {
         path: '/temas',
         name: 'Temas',
         builder: (context, state) {
-          return TemasPage();
+          return const TemasPage();
         },
       ),
       //AlumnosPage
@@ -69,8 +70,7 @@ class AppNavigation {
         path: '/alumnos',
         name: 'Alumnos',
         builder: (context, state) {
-          return const Placeholder();
-          //return AlumnosPage();
+          return const AlumnosPage();
         },
       ),
       //BibliotecaPage

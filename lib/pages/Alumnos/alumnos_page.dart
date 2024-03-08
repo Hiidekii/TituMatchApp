@@ -1,16 +1,16 @@
 import "package:flutter/material.dart";
 import "package:titumatch/components/secondaryappbar.dart";
-import "package:titumatch/pages/Asesores/Components/all_asesores.dart";
-import "package:titumatch/pages/Asesores/Components/saved_asesores.dart";
+import "package:titumatch/pages/Alumnos/Components/all_alumnos.dart";
+import "package:titumatch/pages/Alumnos/Components/saved_alumnos.dart";
 
-class AsesoresPage extends StatefulWidget {
-  const AsesoresPage({super.key});
+class AlumnosPage extends StatefulWidget {
+  const AlumnosPage({super.key});
 
   @override
-  State<AsesoresPage> createState() => _AsesoresPageState();
+  State<AlumnosPage> createState() => _AlumnosPageState();
 }
 
-class _AsesoresPageState extends State<AsesoresPage> {
+class _AlumnosPageState extends State<AlumnosPage> {
   int _selectedIndex = 0;
 
   @override
@@ -133,7 +133,7 @@ class _AsesoresPageState extends State<AsesoresPage> {
                 //       },
                 //     ),
                 //   )
-                allAsesores(context)
+                allAlumnos(context)
                 : //Expanded(
                 //     child: GridView(
                 //       gridDelegate:
@@ -168,7 +168,7 @@ class _AsesoresPageState extends State<AsesoresPage> {
                 //       },
                 //     ),
                 //   ),
-                savedAsesores(context)
+                savedAlumnos(context)
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget savedAsesores(BuildContext context) {
+Widget savedAlumnos(BuildContext context) {
   return Expanded(
     child: GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -19,7 +19,7 @@ Widget savedAsesores(BuildContext context) {
                   aspectRatio:
                       2, // Puedes ajustar este valor según tus necesidades
                   child: Image.asset(
-                    'lib/images/albertomatsu.jpg',
+                    'lib/images/alumnoplaceholder.jpg',
                     fit: BoxFit.cover,
                   ),
                 ),

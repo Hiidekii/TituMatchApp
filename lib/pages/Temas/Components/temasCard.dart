@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TemaCard extends StatelessWidget {
   final String title;
 
-  const TemaCard({required this.title});
+  const TemaCard({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
