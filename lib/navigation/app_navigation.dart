@@ -7,6 +7,7 @@ import 'package:titumatch/pages/Home/home_page.dart';
 import 'package:titumatch/pages/Login/login_page.dart';
 import 'package:titumatch/pages/Profile/profile_page.dart';
 import 'package:titumatch/pages/Quiz/quiz1.dart';
+import 'package:titumatch/pages/Quiz/quiz2.dart';
 import 'package:titumatch/pages/Recursos/recursos_page.dart';
 import 'package:titumatch/pages/Resultados/resultados_page.dart';
 import 'package:titumatch/pages/Talleres/talleres_page.dart';
@@ -48,6 +49,14 @@ class AppNavigation {
         name: 'Quiz1',
         builder: (context, state) {
           return Quiz1Page();
+        },
+      ),
+      //Quiz2
+      GoRoute(
+        path: '/quiz2',
+        name: 'Quiz2',
+        builder: (context, state) {
+          return Quiz2Page();
         },
       ),
       //ResultadosPage

@@ -5,20 +5,20 @@ import "package:go_router/go_router.dart";
 import "package:titumatch/components/mainappbar.dart";
 import "package:titumatch/components/mybutton.dart";
 
-class Quiz1Page extends StatefulWidget {
-  const Quiz1Page({super.key});
+class Quiz2Page extends StatefulWidget {
+  const Quiz2Page({super.key});
 
   @override
-  State<Quiz1Page> createState() => _Quiz2PageState();
+  State<Quiz2Page> createState() => _Quiz1PageState();
 }
 
-class _Quiz2PageState extends State<Quiz1Page> {
+class _Quiz1PageState extends State<Quiz2Page> {
   final List myTiles = [
-    'En una ONG que apoya casos de violencia hacia la mujer.',
-    'En el área de capacitación y desarrollo de personal en una empresa privada.',
-    'En el área de responsabilidad social-ambiental de una empresa privada.',
-    'En una ONG que brinda servicios psicológicos a migrantes.',
-    'En el área de gestión del talento de una empresa privada.'
+    'Realizar un diagnóstico clínico.',
+    'Realizar una evaluación psicopedagógica.',
+    'Diseñar estrategias de gestión del talento para empresas.',
+    'Estudiar sobre el comportamientos organizacional.',
+    'Aplicar pruebas psicológicas.'
   ];
 
   void updateMyTiles(int oldIndex, int newIndex) {
@@ -134,14 +134,14 @@ class _Quiz2PageState extends State<Quiz1Page> {
                           width: 250,
                           height: 20,
                           child: LinearProgressIndicator(
-                            value: 1 / 3, // Valor de la barra de progreso
+                            value: 2 / 3, // Valor de la barra de progreso
                             color: Colors.orange,
                           ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        Text('1/3')
+                        Text('2/3')
                       ],
                     ),
                     const SizedBox(
@@ -159,6 +159,6 @@ class _Quiz2PageState extends State<Quiz1Page> {
   }
 
   onTapNext() {
-    GoRouter.of(context).go('/quiz2');
+    GoRouter.of(context).go('/quiz3');
   }
 }
