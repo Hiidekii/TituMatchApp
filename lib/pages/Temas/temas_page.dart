@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/secondaryappbar.dart';
-import 'package:titumatch/pages/Temas/Components/temasCard.dart';
+import 'package:titumatch/pages/Temas/Components/temas_card.dart';
 
 class TemasPage extends StatefulWidget {
   const TemasPage({Key? key});

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:titumatch/pages/Alumnos/alumnos_page.dart';
 import 'package:titumatch/pages/Asesores/asesores_page.dart';
+import 'package:titumatch/pages/Info/Path/page1.dart';
 import 'package:titumatch/pages/Bienvenida/welcome_page.dart';
 import 'package:titumatch/pages/Eventos/eventos_page.dart';
 import 'package:titumatch/pages/Home/home_page.dart';
+import 'package:titumatch/pages/Info/info_page.dart';
 import 'package:titumatch/pages/Login/login_page.dart';
 import 'package:titumatch/pages/Profile/profile_page.dart';
 import 'package:titumatch/pages/Quiz/quiz1.dart';
@@ -19,7 +21,7 @@ import 'package:titumatch/pages/Wraper/main_wraper.dart';
 class AppNavigation {
   AppNavigation._();
 
-  static String initR = "/login";
+  static String initR = "/info";
 
   //Private navigator keys
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -51,6 +53,14 @@ class AppNavigation {
         name: 'Welcome',
         builder: (context, state) {
           return const WelcomePage();
+        },
+      ),
+      //InfoPage
+      GoRoute(
+        path: '/info',
+        name: 'Info',
+        builder: (context, state) {
+          return InfoPage();
         },
       ),
       //Quiz1

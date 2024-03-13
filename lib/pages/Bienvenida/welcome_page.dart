@@ -45,6 +45,6 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 
   continueOnTap() {
-    GoRouter.of(context).go('/quiz1');
+    GoRouter.of(context).go('/info');
   }
 }
