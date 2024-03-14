@@ -26,7 +26,7 @@ class _InfoPageState extends State<InfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: MainAppBar(
         logoImagePath:
             'lib/images/logo_ulima.png', // Ruta de tu imagen del logo
         onMessagesPressed: () {

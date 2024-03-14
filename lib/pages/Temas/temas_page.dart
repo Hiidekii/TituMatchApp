@@ -13,7 +13,7 @@ class _TemasPageState extends State<TemasPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SecondaryCustomAppBar(
+      appBar: SecondaryAppBar(
         logoImagePath: 'lib/images/logo_ulima.png',
         onMessagesPressed: () {
           // Lógica cuando se presiona el icono de mensajes

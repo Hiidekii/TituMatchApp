@@ -17,7 +17,7 @@ class _EventosPageState extends State<EventosPage> {
     //String displayText = _selectedIndex == 0 ? 'Hola' : 'Adios';
 
     return Scaffold(
-      appBar: SecondaryCustomAppBar(
+      appBar: SecondaryAppBar(
         logoImagePath: 'lib/images/logo_ulima.png',
         onMessagesPressed: () {
           // Lógica cuando se presiona el icono de mensajes

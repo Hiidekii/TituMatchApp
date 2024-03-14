@@ -13,7 +13,7 @@ class ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange,
-      appBar: CustomAppBar(
+      appBar: MainAppBar(
         logoImagePath:
             'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png', // Ruta de tu imagen del logo
         onMessagesPressed: () {

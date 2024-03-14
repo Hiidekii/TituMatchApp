@@ -15,7 +15,7 @@ class RecursosPageState extends State<RecursosPage> {
     return Scaffold(
       backgroundColor:
           Colors.orange, // Establecer el color de fondo como naranja
-      appBar: CustomAppBar(
+      appBar: MainAppBar(
         logoImagePath:
             'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png', // Ruta de tu imagen del logo
         onMessagesPressed: () {

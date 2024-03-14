@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SecondaryCustomAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
+class SecondaryAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String logoImagePath;
   final VoidCallback onMessagesPressed;
 
-  const SecondaryCustomAppBar({
+  const SecondaryAppBar({
     super.key,
     required this.logoImagePath,
     required this.onMessagesPressed,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String logoImagePath;
   final VoidCallback onMessagesPressed;
 
-  const CustomAppBar({
+  const MainAppBar({
     super.key,
     required this.logoImagePath,
     required this.onMessagesPressed,
@@ -31,6 +31,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
       ),
       actions: [
+        // SizedBox(
+        //   width: 40, //appbar solo logo crear nuevo
+        // )
         Padding(
           padding: const EdgeInsets.only(right: 16.0),
           child: IconButton(
