@@ -2,7 +2,6 @@ import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 import "package:titumatch/components/mainappbar.dart";
 import "package:titumatch/components/mybutton.dart";
-import "package:titumatch/pages/Home/home_page.dart";
 import "package:titumatch/pages/Info/Path/page1.dart";
 import "package:titumatch/pages/Info/Path/page2.dart";
 import "package:titumatch/pages/Info/Path/page3.dart";
@@ -16,12 +15,13 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  final _controller = PageController();
+  PageController controller = PageController(initialPage: 0);
+  int pageChanged = 0;
 
   final List<Widget> pages = [
-    Page1(),
-    Page2(),
-    Page3(),
+    const Page1(),
+    const Page2(),
+    const Page3(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -40,12 +40,17 @@ class _InfoPageState extends State<InfoPage> {
           SizedBox(
             height: 500,
             child: PageView(
-              controller: _controller,
+              controller: controller,
+              onPageChanged: (index) {
+                setState(() {
+                  pageChanged = index;
+                });
+              },
               children: pages,
             ),
           ),
           SmoothPageIndicator(
-            controller: _controller,
+            controller: controller,
             count: pages.length,
             effect: const JumpingDotEffect(
               activeDotColor: Colors.orange,
@@ -55,14 +60,20 @@ class _InfoPageState extends State<InfoPage> {
               spacing: 20,
             ),
           ),
-          MyButton(onTap: onTapNext(_controller), text: 'siguiente')
+          MyButton(
+              onTap: () {
+                if (pageChanged != pages.length) {
+                  controller.animateToPage(pageChanged++,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.bounceInOut);
+                } else {
+                  GoRouter.of(context).go('/experience');
+                }
+              },
+              text: 'Siguiente')
         ],
       ),
     );
-  }
-
-  onTapNext(PageController controller) {
-    controller.jumpToPage(1);
   }
 }
 

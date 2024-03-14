@@ -3,7 +3,7 @@ import 'package:titumatch/components/secondaryappbar.dart';
 import 'package:titumatch/pages/Temas/Components/temas_card.dart';
 
 class TemasPage extends StatefulWidget {
-  const TemasPage({Key? key});
+  const TemasPage({super.key});
 
   @override
   State<TemasPage> createState() => _TemasPageState();

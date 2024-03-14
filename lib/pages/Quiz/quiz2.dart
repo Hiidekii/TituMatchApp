@@ -137,14 +137,14 @@ class _Quiz2PageState extends State<Quiz2Page> {
                         width: 250,
                         height: 20,
                         child: LinearProgressIndicator(
-                          value: 3 / 3, // Valor de la barra de progreso
+                          value: 2 / 3, // Valor de la barra de progreso
                           color: Colors.orange,
                         ),
                       ),
                       SizedBox(
                         width: 10,
                       ),
-                      Text('3/3')
+                      Text('2/3')
                     ],
                   ),
                   const SizedBox(

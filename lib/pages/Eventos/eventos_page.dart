@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/secondaryappbar.dart';
-import 'package:titumatch/pages/Recursos/Components/recursosCard.dart';
+import 'package:titumatch/pages/Recursos/Components/recursos_card.dart';
 
 class EventosPage extends StatefulWidget {
   const EventosPage({super.key});

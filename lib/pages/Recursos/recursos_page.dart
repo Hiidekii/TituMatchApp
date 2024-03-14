@@ -6,10 +6,10 @@ class RecursosPage extends StatefulWidget {
   const RecursosPage({super.key});
 
   @override
-  _RecursosPageState createState() => _RecursosPageState();
+  RecursosPageState createState() => RecursosPageState();
 }
 
-class _RecursosPageState extends State<RecursosPage> {
+class RecursosPageState extends State<RecursosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

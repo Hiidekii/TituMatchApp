@@ -137,14 +137,14 @@ class _Quiz3PageState extends State<Quiz3Page> {
                         width: 250,
                         height: 20,
                         child: LinearProgressIndicator(
-                          value: 2 / 3, // Valor de la barra de progreso
+                          value: 3 / 3, // Valor de la barra de progreso
                           color: Colors.orange,
                         ),
                       ),
                       SizedBox(
                         width: 10,
                       ),
-                      Text('2/3')
+                      Text('3/3')
                     ],
                   ),
                   const SizedBox(
@@ -161,6 +161,6 @@ class _Quiz3PageState extends State<Quiz3Page> {
   }
 
   onTapNext() {
-    GoRouter.of(context).go('/quiz3');
+    GoRouter.of(context).go('/congrats');
   }
 }
