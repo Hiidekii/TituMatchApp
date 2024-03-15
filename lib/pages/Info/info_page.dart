@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
-import "package:titumatch/components/mainappbar.dart";
 import "package:titumatch/components/mybutton.dart";
+import "package:titumatch/components/startingappbar.dart";
 import "package:titumatch/pages/Info/Path/page1.dart";
 import "package:titumatch/pages/Info/Path/page2.dart";
 import "package:titumatch/pages/Info/Path/page3.dart";
@@ -26,13 +26,7 @@ class _InfoPageState extends State<InfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(
-        logoImagePath:
-            'lib/images/logo_ulima.png', // Ruta de tu imagen del logo
-        onMessagesPressed: () {
-          // Lógica cuando se presiona el icono de mensajes
-        },
-      ),
+      appBar: const LogoAppBar(logoImagePath: 'lib/images/logo_ulima.png'),
       backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

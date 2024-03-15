@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
-import "package:titumatch/components/mainappbar.dart";
 import "package:titumatch/components/mybutton.dart";
+import "package:titumatch/components/startingappbar.dart";
 
 class Quiz3Page extends StatefulWidget {
   const Quiz3Page({super.key});
@@ -38,13 +38,9 @@ class _Quiz3PageState extends State<Quiz3Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange,
-      appBar: MainAppBar(
-        logoImagePath:
-            'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png', // Ruta de tu imagen del logo
-        onMessagesPressed: () {
-          // Lógica cuando se presiona el icono de mensajes
-        },
-      ),
+      appBar: const LogoAppBar(
+          logoImagePath:
+              'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png'),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Container(
