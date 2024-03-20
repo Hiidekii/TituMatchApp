@@ -1,11 +1,7 @@
-import "package:flutter/material.dart";
-import "package:go_router/go_router.dart";
-import "package:titumatch/components/mybutton.dart";
-import "package:titumatch/components/startingappbar.dart";
-import "package:titumatch/pages/Info/Path/page1.dart";
-import "package:titumatch/pages/Info/Path/page2.dart";
-import "package:titumatch/pages/Info/Path/page3.dart";
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:titumatch/components/startingappbar.dart';
+import 'package:titumatch/pages/Info/info_widget.dart';
 
 class InfoPage extends StatefulWidget {
   const InfoPage({super.key});
@@ -15,108 +11,119 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  PageController controller = PageController(initialPage: 0);
-  int pageChanged = 0;
+  final PageController _pageController = PageController();
 
-  final List<Widget> pages = [
-    const Page1(),
-    const Page2(),
-    const Page3(),
+  void onNextPage() {
+    if (_activePage < _pages.length - 1) {
+      _pageController.nextPage(
+          duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    } else {
+      GoRouter.of(context).go('/experience');
+    }
+  }
+
+  int _activePage = 0;
+
+  final List<Map<String, dynamic>> _pages = [
+    {
+      'color': '#ff5117',
+      'image': 'lib/images/excitedtitu.png',
+      'description':
+          "Titumatch es una plataforma de orientación integral para los estudiantes universitarios que llevarán los cursos de titulación.",
+    },
+    {
+      'color': '#ff5117',
+      'image': 'lib/images/titudoubt.png',
+      'description':
+          'Encontrarás diferentes herramientas para aprobar el curso, incluyendo la elección de tu tema, compañero y asesor.',
+    },
+    {
+      'color': '#ff5117',
+      'image': 'lib/images/dabtitu.png',
+      'description':
+          'Nuestro objetivo es que logres un proceso de titulación exitoso.',
+    },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const LogoAppBar(logoImagePath: 'lib/images/logo_ulima.png'),
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      appBar: const LogoAppBar(
+          logoImagePath:
+              'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png'),
+      backgroundColor: const Color.fromARGB(255, 255, 81, 23),
+      body: Stack(
         children: [
-          SizedBox(
-            height: 500,
-            child: PageView(
-              controller: controller,
-              onPageChanged: (index) {
-                setState(() {
-                  pageChanged = index;
-                });
-              },
-              children: pages,
-            ),
+          PageView.builder(
+            controller: _pageController,
+            itemCount: _pages.length,
+            onPageChanged: (int page) {
+              setState(() {
+                _activePage = page;
+              });
+            },
+            itemBuilder: (BuildContext context, int index) {
+              return InfoWidget(
+                color: _pages[index]['color'],
+                description: _pages[index]['description'],
+                image: _pages[index]['image'],
+                onTab: onNextPage,
+              );
+            },
           ),
-          SmoothPageIndicator(
-            controller: controller,
-            count: pages.length,
-            effect: const JumpingDotEffect(
-              activeDotColor: Colors.orange,
-              dotColor: Colors.grey,
-              dotHeight: 30,
-              dotWidth: 30,
-              spacing: 20,
+          Positioned(
+            top: MediaQuery.of(context).size.height / 1.45,
+            right: 0,
+            left: 0,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _buildIndicator(),
+                )
+              ],
             ),
-          ),
-          MyButton(
-              onTap: () {
-                if (pageChanged != pages.length) {
-                  controller.animateToPage(pageChanged++,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.bounceInOut);
-                } else {
-                  GoRouter.of(context).go('/experience');
-                }
-              },
-              text: 'Siguiente')
+          )
         ],
       ),
     );
   }
+
+  List<Widget> _buildIndicator() {
+    final indicators = <Widget>[];
+    for (var i = 0; i < _pages.length; i++) {
+      if (_activePage == i) {
+        indicators.add(_indicatorsTrue());
+      } else {
+        indicators.add(_indicatorsFalse());
+      }
+    }
+    return indicators;
+  }
+
+  Widget _indicatorsTrue() {
+    return AnimatedContainer(
+      duration: const Duration(microseconds: 300),
+      height: 40,
+      width: 84,
+      margin: const EdgeInsets.only(right: 8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: const Color.fromARGB(255, 255, 81, 23),
+      ),
+    );
+  }
+
+  Widget _indicatorsFalse() {
+    return AnimatedContainer(
+      duration: const Duration(microseconds: 300),
+      height: 40,
+      width: 40,
+      margin: const EdgeInsets.only(right: 8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: Colors.grey.shade100,
+      ),
+    );
+  }
 }
-
-// class InfoPage extends StatelessWidget {
-//   final _controller = PageController();
-
-//   final List<Widget> pages = [
-//     Page1(),
-//     Page2(),
-//     Page3(),
-//   ];
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: CustomAppBar(
-//         logoImagePath:
-//             'lib/images/logo_ulima.png', // Ruta de tu imagen del logo
-//         onMessagesPressed: () {
-//           // Lógica cuando se presiona el icono de mensajes
-//         },
-//       ),
-//       backgroundColor: Colors.white,
-//       body: Column(
-//         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//         children: [
-//           SizedBox(
-//             height: 500,
-//             child: PageView(
-//               controller: _controller,
-//               children: pages,
-//             ),
-//           ),
-//           SmoothPageIndicator(
-//             controller: _controller,
-//             count: 3,
-//             effect: const JumpingDotEffect(
-//               activeDotColor: Colors.orange,
-//               dotColor: Colors.grey,
-//               dotHeight: 30,
-//               dotWidth: 30,
-//               spacing: 20,
-//             ),
-//           ),
-//           MyButton(onTap: onTapNext, text: 'siguiente')
-//         ],
-//       ),
-//     );
-//   }
-
-//   onTapNext() {}
-// }

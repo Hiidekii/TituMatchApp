@@ -10,9 +10,7 @@ import 'package:titumatch/pages/Home/home_page.dart';
 import 'package:titumatch/pages/Info/info_page.dart';
 import 'package:titumatch/pages/Login/login_page.dart';
 import 'package:titumatch/pages/Profile/profile_page.dart';
-import 'package:titumatch/pages/Quiz/quiz1.dart';
-import 'package:titumatch/pages/Quiz/quiz2.dart';
-import 'package:titumatch/pages/Quiz/quiz3.dart';
+import 'package:titumatch/pages/Quiz/quiz_page.dart';
 import 'package:titumatch/pages/Recursos/recursos_page.dart';
 import 'package:titumatch/pages/Resultados/resultados_page.dart';
 import 'package:titumatch/pages/Talleres/talleres_page.dart';
@@ -72,28 +70,12 @@ class AppNavigation {
           return const ExperiencePage();
         },
       ),
-      //Quiz1
+      //QuizPage
       GoRoute(
         path: '/quiz1',
         name: 'Quiz1',
         builder: (context, state) {
-          return const Quiz1Page();
-        },
-      ),
-      //Quiz2
-      GoRoute(
-        path: '/quiz2',
-        name: 'Quiz2',
-        builder: (context, state) {
-          return const Quiz2Page();
-        },
-      ),
-      //Quiz2
-      GoRoute(
-        path: '/quiz3',
-        name: 'Quiz3',
-        builder: (context, state) {
-          return const Quiz3Page();
+          return const QuizPage();
         },
       ),
       //CongratsPage
