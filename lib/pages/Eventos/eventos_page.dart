@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/secondaryappbar.dart';
 import 'package:titumatch/pages/Recursos/Components/recursos_card.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class EventosPage extends StatefulWidget {
   const EventosPage({super.key});
@@ -36,7 +37,7 @@ class _EventosPageState extends State<EventosPage> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange,
+                  color: ulimaOrange,
                 ),
               ),
             ),
@@ -56,13 +57,11 @@ class _EventosPageState extends State<EventosPage> {
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
                           if (states.contains(MaterialState.pressed)) {
-                            return Colors
-                                .orange; // Cambiar el color si está presionado
+                            return ulimaOrange; // Cambiar el color si está presionado
                           }
                           return _selectedIndex == 0
-                              ? Colors.orange
-                              : Colors
-                                  .grey; // Cambiar el color si está seleccionado
+                              ? ulimaOrange
+                              : backgroundGrey; // Cambiar el color si está seleccionado
                         },
                       ),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -74,7 +73,7 @@ class _EventosPageState extends State<EventosPage> {
                     child: const Text(
                       'Todos',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: textWhite,
                       ),
                     ),
                   ),
@@ -91,13 +90,11 @@ class _EventosPageState extends State<EventosPage> {
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
                           if (states.contains(MaterialState.pressed)) {
-                            return Colors
-                                .orange; // Cambiar el color si está presionado
+                            return ulimaOrange; // Cambiar el color si está presionado
                           }
                           return _selectedIndex == 1
-                              ? Colors.orange
-                              : Colors
-                                  .grey; // Cambiar el color si está seleccionado
+                              ? ulimaOrange
+                              : backgroundGrey; // Cambiar el color si está seleccionado
                         },
                       ),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -109,7 +106,7 @@ class _EventosPageState extends State<EventosPage> {
                     child: const Text(
                       'Guardados',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: textWhite,
                       ),
                     ),
                   ),

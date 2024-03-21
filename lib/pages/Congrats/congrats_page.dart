@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 import "package:titumatch/components/mybutton.dart";
 import "package:titumatch/components/startingappbar.dart";
+import "package:titumatch/utils/colors.dart";
 
 class CongratsPage extends StatefulWidget {
   const CongratsPage({super.key});
@@ -17,7 +18,7 @@ class _CongratsPageState extends State<CongratsPage> {
       appBar: const LogoAppBar(
           logoImagePath:
               'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png'),
-      backgroundColor: Colors.orange,
+      backgroundColor: ulimaOrange,
       body: Container(
         alignment: Alignment.center,
         child: Column(
@@ -27,7 +28,7 @@ class _CongratsPageState extends State<CongratsPage> {
               padding: const EdgeInsets.all(30.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: backgroundWhite,
                   borderRadius: BorderRadius.circular(
                       10.0), // Ajusta el radio según sea necesario
                 ),
@@ -37,7 +38,7 @@ class _CongratsPageState extends State<CongratsPage> {
                     '¡Felicidades! \n ¡Terminaste el TituQuiz!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.orange,
+                        color: ulimaOrange,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),

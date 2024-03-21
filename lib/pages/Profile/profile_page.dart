@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/mainappbar.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -12,7 +13,7 @@ class ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: ulimaOrange,
       appBar: MainAppBar(
         logoImagePath:
             'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png', // Ruta de tu imagen del logo
@@ -41,7 +42,7 @@ class ProfilePageState extends State<ProfilePage> {
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: textWhite,
                         ),
                       ),
                       SizedBox(height: 10),
@@ -49,21 +50,21 @@ class ProfilePageState extends State<ProfilePage> {
                         'Carrera de Arquitectura',
                         style: TextStyle(
                           fontSize: 12,
-                          color: Colors.white,
+                          color: textWhite,
                         ),
                       ),
                       Text(
                         '9no ciclo',
                         style: TextStyle(
                           fontSize: 12,
-                          color: Colors.white,
+                          color: textWhite,
                         ),
                       ),
                       Text(
                         'correo@ejemplo.com',
                         style: TextStyle(
                           fontSize: 12,
-                          color: Colors.white,
+                          color: textWhite,
                         ),
                       ),
                     ],
@@ -104,11 +105,11 @@ class ProfilePageState extends State<ProfilePage> {
       title: Text(
         title,
         style: const TextStyle(
-            fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+            fontSize: 20, color: textWhite, fontWeight: FontWeight.bold),
       ),
       trailing: Icon(
         icon,
-        color: Colors.white,
+        color: textWhite,
       ),
       onTap: () {
         // Lógica cuando se toca el elemento de la lista

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/buttoncard.dart';
 import 'package:titumatch/components/mainappbar.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class RecursosPage extends StatefulWidget {
   const RecursosPage({super.key});
@@ -13,8 +14,7 @@ class RecursosPageState extends State<RecursosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          Colors.orange, // Establecer el color de fondo como naranja
+      backgroundColor: ulimaOrange, // Establecer el color de fondo como naranja
       appBar: MainAppBar(
         logoImagePath:
             'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png', // Ruta de tu imagen del logo
@@ -35,7 +35,7 @@ class RecursosPageState extends State<RecursosPage> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: textWhite,
                 ),
               ),
             ),
@@ -45,10 +45,10 @@ class RecursosPageState extends State<RecursosPage> {
                 children: [
                   Expanded(
                       child: buildCard(context, Icons.book, 'Biblioteca',
-                          Colors.white, Colors.orange, '/biblioteca')),
+                          backgroundWhite, ulimaOrange, '/biblioteca')),
                   Expanded(
                       child: buildCard(context, Icons.person, 'Talleres',
-                          Colors.white, Colors.orange, '/talleres')),
+                          backgroundWhite, ulimaOrange, '/talleres')),
                 ],
               ),
             ),
@@ -58,10 +58,10 @@ class RecursosPageState extends State<RecursosPage> {
                 children: [
                   Expanded(
                       child: buildCard(context, Icons.school, 'Tesis Pasadas',
-                          Colors.white, Colors.orange, '/tesispasadas')),
+                          backgroundWhite, ulimaOrange, '/tesispasadas')),
                   Expanded(
                       child: buildCard(context, Icons.people, 'Eventos',
-                          Colors.white, Colors.orange, '/eventos')),
+                          backgroundWhite, ulimaOrange, '/eventos')),
                 ],
               ),
             ),

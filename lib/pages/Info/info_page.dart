@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:titumatch/components/startingappbar.dart';
 import 'package:titumatch/pages/Info/info_widget.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class InfoPage extends StatefulWidget {
   const InfoPage({super.key});
@@ -26,19 +27,16 @@ class _InfoPageState extends State<InfoPage> {
 
   final List<Map<String, dynamic>> _pages = [
     {
-      'color': '#ff5117',
       'image': 'lib/images/excitedtitu.png',
       'description':
           "Titumatch es una plataforma de orientación integral para los estudiantes universitarios que llevarán los cursos de titulación.",
     },
     {
-      'color': '#ff5117',
       'image': 'lib/images/titudoubt.png',
       'description':
           'Encontrarás diferentes herramientas para aprobar el curso, incluyendo la elección de tu tema, compañero y asesor.',
     },
     {
-      'color': '#ff5117',
       'image': 'lib/images/dabtitu.png',
       'description':
           'Nuestro objetivo es que logres un proceso de titulación exitoso.',
@@ -51,7 +49,7 @@ class _InfoPageState extends State<InfoPage> {
       appBar: const LogoAppBar(
           logoImagePath:
               'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png'),
-      backgroundColor: const Color.fromARGB(255, 255, 81, 23),
+      backgroundColor: ulimaOrange,
       body: Stack(
         children: [
           PageView.builder(
@@ -64,7 +62,6 @@ class _InfoPageState extends State<InfoPage> {
             },
             itemBuilder: (BuildContext context, int index) {
               return InfoWidget(
-                color: _pages[index]['color'],
                 description: _pages[index]['description'],
                 image: _pages[index]['image'],
                 onTab: onNextPage,
@@ -109,7 +106,7 @@ class _InfoPageState extends State<InfoPage> {
       margin: const EdgeInsets.only(right: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: const Color.fromARGB(255, 255, 81, 23),
+        color: ulimaOrange,
       ),
     );
   }
@@ -122,7 +119,7 @@ class _InfoPageState extends State<InfoPage> {
       margin: const EdgeInsets.only(right: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: Colors.grey.shade100,
+        color: backgroundGrey,
       ),
     );
   }

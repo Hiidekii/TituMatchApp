@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 import "package:titumatch/components/mybutton.dart";
 import "package:titumatch/components/startingappbar.dart";
+import "package:titumatch/utils/colors.dart";
 
 class ExperiencePage extends StatefulWidget {
   const ExperiencePage({super.key});
@@ -17,7 +18,7 @@ class _ExperiencePageState extends State<ExperiencePage> {
       appBar: const LogoAppBar(
           logoImagePath:
               'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png'),
-      backgroundColor: Colors.orange,
+      backgroundColor: ulimaOrange,
       body: Container(
         alignment: Alignment.center,
         child: Column(
@@ -27,7 +28,7 @@ class _ExperiencePageState extends State<ExperiencePage> {
               padding: const EdgeInsets.all(40.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: backgroundWhite,
                   borderRadius: BorderRadius.circular(
                       10.0), // Ajusta el radio según sea necesario
                 ),
@@ -55,6 +56,6 @@ class _ExperiencePageState extends State<ExperiencePage> {
   }
 
   continueOnTap() {
-    GoRouter.of(context).go('/quiz1');
+    GoRouter.of(context).go('/quiz');
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/secondaryappbar.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class ResultadosPage extends StatefulWidget {
   const ResultadosPage({super.key});
@@ -31,7 +32,7 @@ class _ResultadosPageState extends State<ResultadosPage> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange,
+                  color: ulimaOrange,
                 ),
               ),
             ),
@@ -43,7 +44,7 @@ class _ResultadosPageState extends State<ResultadosPage> {
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey,
+                  color: textGrey,
                 ),
               ),
             ),
@@ -60,7 +61,7 @@ class _ResultadosPageState extends State<ResultadosPage> {
                       height: 10,
                       child: LinearProgressIndicator(
                         value: (index + 1) / 5, // Valor de la barra de progreso
-                        color: Colors.orange,
+                        color: ulimaOrange,
                       ),
                     ),
                   );

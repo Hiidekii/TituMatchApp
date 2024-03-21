@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/secondaryappbar.dart';
 import 'package:titumatch/pages/Temas/Components/temas_card.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class TemasPage extends StatefulWidget {
   const TemasPage({super.key});
@@ -32,7 +33,7 @@ class _TemasPageState extends State<TemasPage> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange,
+                  color: ulimaOrange,
                 ),
               ),
             ),
@@ -44,7 +45,7 @@ class _TemasPageState extends State<TemasPage> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: textBlack,
                 ),
               ),
             ),
@@ -57,7 +58,7 @@ class _TemasPageState extends State<TemasPage> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: textBlack,
                 ),
               ),
             ),
@@ -68,11 +69,14 @@ class _TemasPageState extends State<TemasPage> {
                   // Lógica cuando se presiona el botón "Explorar"
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange, // Color naranja
+                  backgroundColor: ulimaOrange, // Color naranja
                 ),
                 child: const Text(
                   'Explorar',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                    color: textWhite,
+                    fontSize: 20,
+                  ),
                 ),
               ),
             ),

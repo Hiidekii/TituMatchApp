@@ -8,6 +8,7 @@ import 'package:titumatch/pages/Bienvenida/welcome_page.dart';
 import 'package:titumatch/pages/Eventos/eventos_page.dart';
 import 'package:titumatch/pages/Home/home_page.dart';
 import 'package:titumatch/pages/Info/info_page.dart';
+import 'package:titumatch/pages/Loading/loading_page.dart';
 import 'package:titumatch/pages/Login/login_page.dart';
 import 'package:titumatch/pages/Profile/profile_page.dart';
 import 'package:titumatch/pages/Quiz/quiz_page.dart';
@@ -72,10 +73,18 @@ class AppNavigation {
       ),
       //QuizPage
       GoRoute(
-        path: '/quiz1',
-        name: 'Quiz1',
+        path: '/quiz',
+        name: 'Quiz',
         builder: (context, state) {
           return const QuizPage();
+        },
+      ),
+      //LoadingPage
+      GoRoute(
+        path: '/loading',
+        name: 'Loading',
+        builder: (context, state) {
+          return const LoadingPage();
         },
       ),
       //CongratsPage

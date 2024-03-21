@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class InfoWidget extends StatelessWidget {
   const InfoWidget({
     super.key,
-    required this.color,
     required this.description,
     required this.image,
     required this.onTab,
   });
 
-  final String color;
   final String description;
   final String image;
   final VoidCallback onTab;
@@ -17,7 +16,7 @@ class InfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: hexToColor(color),
+      color: ulimaOrange,
       child: Stack(
         children: [
           Container(
@@ -36,7 +35,7 @@ class InfoWidget extends StatelessWidget {
             child: Container(
               height: MediaQuery.of(context).size.height / 2.16,
               decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: backgroundWhite,
                   borderRadius:
                       BorderRadius.only(topLeft: Radius.circular(100))),
               child: Padding(
@@ -51,7 +50,7 @@ class InfoWidget extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 18,
                         height: 1.5,
-                        color: Colors.black,
+                        color: textBlack,
                       ),
                       textAlign: TextAlign.center,
                     )
@@ -69,14 +68,14 @@ class InfoWidget extends StatelessWidget {
                 child: SizedBox(
                   height: 46,
                   child: MaterialButton(
-                    color: hexToColor(color),
+                    color: ulimaOrange,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
                     onPressed: onTab,
                     child: const Text(
                       'Siguiente',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: textWhite),
                     ),
                   ),
                 )),
@@ -84,12 +83,5 @@ class InfoWidget extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Color hexToColor(String hex) {
-    assert(RegExp(r'^#([0-9a-fA-F]{6})|([0-9a-fA-F]{8})$').hasMatch(hex));
-
-    return Color(int.parse(hex.substring(1), radix: 16) +
-        (hex.length == 7 ? 0xFF000000 : 0x00000000));
   }
 }

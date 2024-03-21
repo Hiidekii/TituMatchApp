@@ -17,7 +17,7 @@ class _QuizPageState extends State<QuizPage> {
       _pageController.nextPage(
           duration: const Duration(milliseconds: 500), curve: Curves.linear);
     } else {
-      GoRouter.of(context).go('/congrats');
+      GoRouter.of(context).go('/loading');
     }
   }
 

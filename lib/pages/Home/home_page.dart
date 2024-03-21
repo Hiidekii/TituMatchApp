@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/buttoncard.dart';
 import 'package:titumatch/components/mainappbar.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,7 +34,7 @@ class HomePageState extends State<HomePage> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange,
+                  color: ulimaOrange,
                 ),
               ),
             ),
@@ -43,10 +44,10 @@ class HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                       child: buildCard(context, Icons.book, 'Resultados',
-                          Colors.orange, Colors.white, '/resultados')),
+                          ulimaOrange, textWhite, '/resultados')),
                   Expanded(
                       child: buildCard(context, Icons.person, 'Asesores',
-                          Colors.orange, Colors.white, '/asesores')),
+                          ulimaOrange, textWhite, '/asesores')),
                 ],
               ),
             ),
@@ -56,10 +57,10 @@ class HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                       child: buildCard(context, Icons.school, 'Temas',
-                          Colors.orange, Colors.white, '/temas')),
+                          ulimaOrange, textWhite, '/temas')),
                   Expanded(
                       child: buildCard(context, Icons.people, 'Alumnos',
-                          Colors.orange, Colors.white, '/alumnos')),
+                          ulimaOrange, textWhite, '/alumnos')),
                 ],
               ),
             ),

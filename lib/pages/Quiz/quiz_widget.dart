@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:titumatch/components/mybutton.dart';
 import 'package:titumatch/components/startingappbar.dart';
+import 'package:titumatch/utils/colors.dart';
 
 class QuizWidget extends StatefulWidget {
   const QuizWidget({
@@ -49,12 +50,12 @@ class _QuizWidgetState extends State<QuizWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 81, 23),
+      backgroundColor: ulimaOrange,
       appBar: const LogoAppBar(
           logoImagePath:
               'lib/images/Logo-Universidad-de-Lima-e1615406803400-300x77.png'),
       body: ColoredBox(
-        color: const Color.fromARGB(255, 255, 81, 23),
+        color: ulimaOrange,
         child: Stack(
           children: [
             Positioned(
@@ -65,7 +66,7 @@ class _QuizWidgetState extends State<QuizWidget> {
               child: Container(
                 height: MediaQuery.of(context).size.height / 2.16,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: backgroundWhite,
                     borderRadius: BorderRadius.circular(60)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -87,7 +88,7 @@ class _QuizWidgetState extends State<QuizWidget> {
                         style: TextStyle(
                           fontSize: 12,
                           height: 1.5,
-                          color: Colors.grey,
+                          color: textGrey,
                         ),
                         textAlign: TextAlign.start,
                       ),
@@ -113,7 +114,7 @@ class _QuizWidgetState extends State<QuizWidget> {
                                 for (final tile in opcionesValues)
                                   Card(
                                     key: ValueKey(tile),
-                                    color: Colors.grey,
+                                    color: backgroundGrey,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(0),
                                     ),
@@ -159,7 +160,7 @@ class _QuizWidgetState extends State<QuizWidget> {
                             child: LinearProgressIndicator(
                               value: (widget.page + 1) /
                                   3, // Valor de la barra de progreso
-                              color: Colors.orange,
+                              color: ulimaOrange,
                             ),
                           ),
                           const SizedBox(

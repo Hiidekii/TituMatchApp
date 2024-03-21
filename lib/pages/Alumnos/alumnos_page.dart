@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:titumatch/components/secondaryappbar.dart";
 import "package:titumatch/pages/Alumnos/Components/all_alumnos.dart";
 import "package:titumatch/pages/Alumnos/Components/saved_alumnos.dart";
+import "package:titumatch/utils/colors.dart";
 
 class AlumnosPage extends StatefulWidget {
   const AlumnosPage({super.key});
@@ -35,7 +36,7 @@ class _AlumnosPageState extends State<AlumnosPage> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange,
+                  color: ulimaOrange,
                 ),
               ),
             ),
@@ -55,13 +56,11 @@ class _AlumnosPageState extends State<AlumnosPage> {
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
                           if (states.contains(MaterialState.pressed)) {
-                            return Colors
-                                .orange; // Cambiar el color si está presionado
+                            return ulimaOrange; // Cambiar el color si está presionado
                           }
                           return _selectedIndex == 0
-                              ? Colors.orange
-                              : Colors
-                                  .grey; // Cambiar el color si está seleccionado
+                              ? ulimaOrange
+                              : backgroundGrey; // Cambiar el color si está seleccionado
                         },
                       ),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -72,9 +71,7 @@ class _AlumnosPageState extends State<AlumnosPage> {
                     ),
                     child: const Text(
                       'Todos',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                      style: TextStyle(color: textWhite),
                     ),
                   ),
                 ),
@@ -90,13 +87,11 @@ class _AlumnosPageState extends State<AlumnosPage> {
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
                           if (states.contains(MaterialState.pressed)) {
-                            return Colors
-                                .orange; // Cambiar el color si está presionado
+                            return ulimaOrange; // Cambiar el color si está presionado
                           }
                           return _selectedIndex == 1
-                              ? Colors.orange
-                              : Colors
-                                  .grey; // Cambiar el color si está seleccionado
+                              ? ulimaOrange
+                              : backgroundGrey; // Cambiar el color si está seleccionado
                         },
                       ),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -108,7 +103,7 @@ class _AlumnosPageState extends State<AlumnosPage> {
                     child: const Text(
                       'Guardados',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: textWhite,
                       ),
                     ),
                   ),
@@ -116,59 +111,7 @@ class _AlumnosPageState extends State<AlumnosPage> {
               ],
             ),
             const SizedBox(height: 20),
-            _selectedIndex == 0
-                ? //Expanded(
-                //     child: GridView.builder(
-                //       gridDelegate:
-                //           const SliverGridDelegateWithFixedCrossAxisCount(
-                //         crossAxisCount: 2,
-                //         crossAxisSpacing: 10,
-                //         mainAxisSpacing: 10,
-                //       ),
-                //       itemCount: 4, // Cambia esto según tus necesidades
-                //       itemBuilder: (context, index) {
-                //         // Reemplaza esta parte con tus imágenes
-                //         return Image.asset(
-                //             'lib/images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg');
-                //       },
-                //     ),
-                //   )
-                allAlumnos(context)
-                : //Expanded(
-                //     child: GridView(
-                //       gridDelegate:
-                //           const SliverGridDelegateWithFixedCrossAxisCount(
-                //         crossAxisCount: 2,
-                //         crossAxisSpacing: 10,
-                //         mainAxisSpacing: 10,
-                //       ),
-                //       itemCount: 4, // Cambia esto según tus necesidades
-                //       itemBuilder: (context, index) {
-                //         // Reemplaza esta parte con tus tarjetas
-                //         return Card(
-                //           child: Column(
-                //             children: [
-                //               Image.asset(
-                //                 'lib/images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
-                //                 width:
-                //                     100, // ajusta el tamaño de la imagen según tus necesidades
-                //                 height: 100,
-                //                 fit: BoxFit.cover,
-                //               ),
-                //               Padding(
-                //                 padding: const EdgeInsets.all(8.0),
-                //                 child: Text(
-                //                   'Descripción del item $index',
-                //                   textAlign: TextAlign.center,
-                //                 ),
-                //               ),
-                //             ],
-                //           ),
-                //         );
-                //       },
-                //     ),
-                //   ),
-                savedAlumnos(context)
+            _selectedIndex == 0 ? allAlumnos(context) : savedAlumnos(context)
           ],
         ),
       ),
