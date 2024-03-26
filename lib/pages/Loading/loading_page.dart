@@ -4,13 +4,13 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:titumatch/utils/colors.dart';
 
 class LoadingPage extends StatefulWidget {
-  const LoadingPage({Key? key}) : super(key: key);
+  const LoadingPage({super.key});
 
   @override
-  _LoadingPageState createState() => _LoadingPageState();
+  LoadingPageState createState() => LoadingPageState();
 }
 
-class _LoadingPageState extends State<LoadingPage> {
+class LoadingPageState extends State<LoadingPage> {
   double percentage = 0.0; // Variable para almacenar el porcentaje
 
   @override

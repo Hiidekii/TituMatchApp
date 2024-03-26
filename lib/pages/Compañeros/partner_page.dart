@@ -1,8 +1,7 @@
 import "package:flutter/material.dart";
 import "package:titumatch/components/secondaryappbar.dart";
-import "package:titumatch/pages/Compa%C3%B1eros/Components/all_alumnos.dart";
 import "package:titumatch/pages/Compa%C3%B1eros/Components/saved_alumnos.dart";
-import "package:titumatch/pages/Compa%C3%B1eros/compa%C3%B1eros_widget.dart";
+import "package:titumatch/pages/Compa%C3%B1eros/partner_widget.dart";
 import "package:titumatch/utils/colors.dart";
 
 class CompanheroPage extends StatefulWidget {
@@ -140,7 +139,6 @@ class _CompanheroPageState extends State<CompanheroPage> {
                         _selectedIndex =
                             1; // Establecer el segundo botón como seleccionado
                       });
-                      print(_people[0]['ideal']);
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
