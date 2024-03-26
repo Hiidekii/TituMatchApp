@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:titumatch/pages/Alumnos/alumnos_page.dart';
+import 'package:titumatch/pages/Compa%C3%B1eros/compa%C3%B1ero_detail.dart';
+import 'package:titumatch/pages/Compa%C3%B1eros/compa%C3%B1eros_page.dart';
 import 'package:titumatch/pages/Asesores/asesores_page.dart';
 import 'package:titumatch/pages/Congrats/congrats_page.dart';
 import 'package:titumatch/pages/Experiencia/experiencia_page.dart';
@@ -39,6 +40,21 @@ class AppNavigation {
     initialLocation: initR,
     navigatorKey: _rootNavigatorKey,
     routes: <RouteBase>[
+      GoRoute(
+        path: '/details/:path',
+        builder: (context, state) {
+          // Extraer el parámetro 'path' de la ruta
+          final data = state.extra! as Map<String, dynamic>;
+          // Aquí puedes mostrar la página de detalles del alumno correspondiente
+          return DetailsScreen(
+            path: data['path'],
+            name: data['name'],
+            image: data['image'],
+            about: data['about'],
+            intereses: data['intereses'],
+          );
+        },
+      ),
       //LoginPage
       GoRoute(
         path: '/login',
@@ -123,7 +139,7 @@ class AppNavigation {
         path: '/alumnos',
         name: 'Alumnos',
         builder: (context, state) {
-          return const AlumnosPage();
+          return const CompanheroPage();
         },
       ),
       //BibliotecaPage

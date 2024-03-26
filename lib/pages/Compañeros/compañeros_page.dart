@@ -1,18 +1,76 @@
 import "package:flutter/material.dart";
 import "package:titumatch/components/secondaryappbar.dart";
-import "package:titumatch/pages/Alumnos/Components/all_alumnos.dart";
-import "package:titumatch/pages/Alumnos/Components/saved_alumnos.dart";
+import "package:titumatch/pages/Compa%C3%B1eros/Components/all_alumnos.dart";
+import "package:titumatch/pages/Compa%C3%B1eros/Components/saved_alumnos.dart";
+import "package:titumatch/pages/Compa%C3%B1eros/compa%C3%B1eros_widget.dart";
 import "package:titumatch/utils/colors.dart";
 
-class AlumnosPage extends StatefulWidget {
-  const AlumnosPage({super.key});
+class CompanheroPage extends StatefulWidget {
+  const CompanheroPage({super.key});
 
   @override
-  State<AlumnosPage> createState() => _AlumnosPageState();
+  State<CompanheroPage> createState() => _CompanheroPageState();
 }
 
-class _AlumnosPageState extends State<AlumnosPage> {
+class _CompanheroPageState extends State<CompanheroPage> {
   int _selectedIndex = 0;
+
+  final List<Map<String, dynamic>> _people = [
+    {
+      'ideal': [
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'omarvaldivia'
+        },
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Pedro Sanchez',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'pedrosanchez'
+        },
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Juan Abad',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'juanabad'
+        }
+      ],
+      'more': [
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'sebastiangomez'
+        },
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'pablojuarez'
+        },
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'kohjisaitama'
+        }
+      ]
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +140,7 @@ class _AlumnosPageState extends State<AlumnosPage> {
                         _selectedIndex =
                             1; // Establecer el segundo botón como seleccionado
                       });
+                      print(_people[0]['ideal']);
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -111,7 +170,12 @@ class _AlumnosPageState extends State<AlumnosPage> {
               ],
             ),
             const SizedBox(height: 20),
-            _selectedIndex == 0 ? allAlumnos(context) : savedAlumnos(context)
+            _selectedIndex == 0
+                ? CompanheroWidget(
+                    listaIdeal: _people[0]['ideal'],
+                    listaMore: _people[0]['more'],
+                  )
+                : savedAlumnos(context)
           ],
         ),
       ),
