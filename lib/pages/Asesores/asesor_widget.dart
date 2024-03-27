@@ -3,18 +3,18 @@ import 'package:flutter/widgets.dart';
 import 'package:titumatch/pages/Compa%C3%B1eros/Components/pp_partner.dart';
 import 'package:titumatch/utils/colors.dart';
 
-class CompanheroWidget extends StatefulWidget {
-  const CompanheroWidget(
+class AsesorWidget extends StatefulWidget {
+  const AsesorWidget(
       {super.key, required this.listaIdeal, required this.listaMore});
 
   final List<Map<String, dynamic>> listaIdeal;
   final List<Map<String, dynamic>> listaMore;
 
   @override
-  State<CompanheroWidget> createState() => _CompanheroWidgetState();
+  State<AsesorWidget> createState() => _AsesorWidgetState();
 }
 
-class _CompanheroWidgetState extends State<CompanheroWidget> {
+class _AsesorWidgetState extends State<AsesorWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(

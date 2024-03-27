@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:titumatch/components/secondaryappbar.dart';
 import 'package:titumatch/utils/colors.dart';
 
-class DetailsScreenPartner extends StatelessWidget {
+class DetailsScreenAsesor extends StatelessWidget {
   final String name;
   final String image;
   final String about;
   final Map<int, String> intereses;
   final String path;
 
-  const DetailsScreenPartner({
+  const DetailsScreenAsesor({
     super.key,
     required this.path,
     required this.name,

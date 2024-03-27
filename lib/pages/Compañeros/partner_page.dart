@@ -26,7 +26,8 @@ class _CompanheroPageState extends State<CompanheroPage> {
           'path': 'omarvaldivia'
         },
         {
-          'image': 'lib/images/alumnoplaceholder.jpg',
+          'image':
+              'lib/images/depositphotos_68564721-Beautiful-young-student-posing (2).jpg',
           'name': 'Pedro Sanchez',
           'about':
               'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
@@ -34,7 +35,7 @@ class _CompanheroPageState extends State<CompanheroPage> {
           'path': 'pedrosanchez'
         },
         {
-          'image': 'lib/images/alumnoplaceholder.jpg',
+          'image': 'lib/images/AdobeStock_429176281.jpg',
           'name': 'Juan Abad',
           'about':
               'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
@@ -139,6 +140,7 @@ class _CompanheroPageState extends State<CompanheroPage> {
                         _selectedIndex =
                             1; // Establecer el segundo botón como seleccionado
                       });
+                      print(_people[0]['ideal']);
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(

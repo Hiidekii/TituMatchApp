@@ -1,18 +1,76 @@
 import "package:flutter/material.dart";
 import "package:titumatch/components/secondaryappbar.dart";
-import "package:titumatch/pages/Asesores/Components/all_asesores.dart";
-import "package:titumatch/pages/Asesores/Components/saved_asesores.dart";
+import "package:titumatch/pages/Compa%C3%B1eros/Components/saved_alumnos.dart";
+import "package:titumatch/pages/Compa%C3%B1eros/partner_widget.dart";
 import "package:titumatch/utils/colors.dart";
 
-class AsesoresPage extends StatefulWidget {
-  const AsesoresPage({super.key});
+class AsesorPage extends StatefulWidget {
+  const AsesorPage({super.key});
 
   @override
-  State<AsesoresPage> createState() => _AsesoresPageState();
+  State<AsesorPage> createState() => _AsesorPageState();
 }
 
-class _AsesoresPageState extends State<AsesoresPage> {
+class _AsesorPageState extends State<AsesorPage> {
   int _selectedIndex = 0;
+
+  final List<Map<String, dynamic>> _people = [
+    {
+      'ideal': [
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'omarvaldivia'
+        },
+        {
+          'image':
+              'lib/images/depositphotos_68564721-Beautiful-young-student-posing (2).jpg',
+          'name': 'Pedro Sanchez',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'pedrosanchez'
+        },
+        {
+          'image': 'lib/images/AdobeStock_429176281.jpg',
+          'name': 'Juan Abad',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'juanabad'
+        }
+      ],
+      'more': [
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'sebastiangomez'
+        },
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'pablojuarez'
+        },
+        {
+          'image': 'lib/images/alumnoplaceholder.jpg',
+          'name': 'Omar Valdivia',
+          'about':
+              'Estudiante del octavo ciclo de la carrera de Comunicación de la Universidad de Lima, con un fuerte interés en el área de audiovisuales.',
+          'intereses': {1: 'Fotografía', 2: 'Arte', 3: 'Viajar'},
+          'path': 'kohjisaitama'
+        }
+      ]
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -71,9 +129,7 @@ class _AsesoresPageState extends State<AsesoresPage> {
                     ),
                     child: const Text(
                       'Todos',
-                      style: TextStyle(
-                        color: textWhite,
-                      ),
+                      style: TextStyle(color: textWhite),
                     ),
                   ),
                 ),
@@ -84,6 +140,7 @@ class _AsesoresPageState extends State<AsesoresPage> {
                         _selectedIndex =
                             1; // Establecer el segundo botón como seleccionado
                       });
+                      print(_people[0]['ideal']);
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -113,7 +170,12 @@ class _AsesoresPageState extends State<AsesoresPage> {
               ],
             ),
             const SizedBox(height: 20),
-            _selectedIndex == 0 ? allAsesores(context) : savedAsesores(context)
+            _selectedIndex == 0
+                ? CompanheroWidget(
+                    listaIdeal: _people[0]['ideal'],
+                    listaMore: _people[0]['more'],
+                  )
+                : savedAlumnos(context)
           ],
         ),
       ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:titumatch/pages/Compa%C3%B1eros/compa%C3%B1ero_detail.dart';
-import 'package:titumatch/pages/Compa%C3%B1eros/compa%C3%B1eros_page.dart';
-import 'package:titumatch/pages/Asesores/asesores_page.dart';
+import 'package:titumatch/pages/Asesores/asesor_detail.dart';
+import 'package:titumatch/pages/Compa%C3%B1eros/partner_detail.dart';
+import 'package:titumatch/pages/Compa%C3%B1eros/partner_page.dart';
+import 'package:titumatch/pages/Asesores/asesor_page.dart';
 import 'package:titumatch/pages/Congrats/congrats_page.dart';
 import 'package:titumatch/pages/Experiencia/experiencia_page.dart';
 import 'package:titumatch/pages/Bienvenida/welcome_page.dart';
@@ -41,12 +42,27 @@ class AppNavigation {
     navigatorKey: _rootNavigatorKey,
     routes: <RouteBase>[
       GoRoute(
-        path: '/details/:path',
+        path: '/detailsPartner/:path',
         builder: (context, state) {
           // Extraer el parámetro 'path' de la ruta
           final data = state.extra! as Map<String, dynamic>;
           // Aquí puedes mostrar la página de detalles del alumno correspondiente
-          return DetailsScreen(
+          return DetailsScreenPartner(
+            path: data['path'],
+            name: data['name'],
+            image: data['image'],
+            about: data['about'],
+            intereses: data['intereses'],
+          );
+        },
+      ),
+      GoRoute(
+        path: '/detailsAsesor/:path',
+        builder: (context, state) {
+          // Extraer el parámetro 'path' de la ruta
+          final data = state.extra! as Map<String, dynamic>;
+          // Aquí puedes mostrar la página de detalles del alumno correspondiente
+          return DetailsScreenAsesor(
             path: data['path'],
             name: data['name'],
             image: data['image'],
@@ -123,7 +139,7 @@ class AppNavigation {
         path: '/asesores',
         name: 'Asesores',
         builder: (context, state) {
-          return const AsesoresPage();
+          return const AsesorPage();
         },
       ),
       //TemasPage

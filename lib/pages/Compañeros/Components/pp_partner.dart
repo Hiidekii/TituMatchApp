@@ -6,7 +6,7 @@ Widget profilePictureAl(BuildContext context, Map<String, dynamic> partner) {
     padding: const EdgeInsets.only(right: 10, left: 10),
     child: GestureDetector(
       onTap: () {
-        GoRouter.of(context).push('/details/${partner['path']}', extra: {
+        GoRouter.of(context).push('/detailsPartner/${partner['path']}', extra: {
           'image': partner['image'],
           'name': partner['name'],
           'about': partner['about'],
